@@ -5,6 +5,10 @@
     justify-content: center;
     flex-direction: column;
 }
+.card-deck {
+    margin: 0;
+    justify-content: center;
+}
 #firstdeck {
     margin-top: 7%;
 }
