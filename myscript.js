@@ -21,18 +21,23 @@ for (let i = 0; i < innerCard.length; i++) {
     cardArray.push(innerCard[i]);
 }
 
-function compare() {
-    if (firstCardClicked === secondCardClicked) {
-        firstCardClicked.removeEventListener("click", flip);
-        if (secondCardClicked === firstFlip) {
-
-        }
-    }
-    else {
-        reset();
-    }
-    function reset() {
-        firstCardClicked.classList.remove('is-flipped');
-        secondCardClicked.classList.remove('is-flipped');
-    }
+function reset() {
+    firstCardClicked = null;
+    secondCardClicked = null;
 }
+
+// function compare() {
+    // if (firstCardClicked === secondCardClicked) {
+    //     firstCardClicked.removeEventListener("click", flip);
+    //     if (secondCardClicked === firstFlip) {
+
+    //     }
+    // }
+    // else {
+    //     reset();
+    // }
+    // function reset() {
+    //     firstCardClicked.classList.remove('is-flipped');
+    //     secondCardClicked.classList.remove('is-flipped');
+    // }
+// }
