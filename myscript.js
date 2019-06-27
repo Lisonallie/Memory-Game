@@ -4,8 +4,11 @@ let innerCard = document.querySelectorAll(".flip-card-inner");
 let allCards = document.getElementById("firstdeck");
 // let cardArray = [];
 
-card.forEach
+flip = () => {
+    
+}
 
+card.forEach(innerCard => innerCard.addEventListener("click", flip));
 
 
 // for (let i = 0; i < card.length; i++) {
