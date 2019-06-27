@@ -11,33 +11,37 @@ for (let i = 0; i < innerCard.length; i++) {
         innerCard[i].classList.toggle('is-flipped');
         if (firstFlip) {
             firstCardClicked = innerCard[i];
+            firstCardClicked.removeEventListener("click", flip);
             firstFlip = false;
         }
         else {
             secondCardClicked = innerCard[i];
-            compare();
+            secondCardClicked.removeEventListener("click", flip);
+            reset();
         }
     });
     cardArray.push(innerCard[i]);
 }
 
 function reset() {
+    firstCardClicked.classList.remove('is-flipped');
+    secondCardClicked.classList.remove('is-flipped');
+    firstCardClicked.addEventListener("click", flip);
+    secondCardClicked.addEventListener("click", flip);
     firstCardClicked = null;
     secondCardClicked = null;
 }
+// let flip = flip();
 
 // function compare() {
-    // if (firstCardClicked === secondCardClicked) {
-    //     firstCardClicked.removeEventListener("click", flip);
-    //     if (secondCardClicked === firstFlip) {
+//     if (firstCardClicked === secondCardClicked) {
+//         firstCardClicked.removeEventListener("click", flip);
+//         if (secondCardClicked === firstFlip) {
 
-    //     }
-    // }
-    // else {
-    //     reset();
-    // }
-    // function reset() {
-    //     firstCardClicked.classList.remove('is-flipped');
-    //     secondCardClicked.classList.remove('is-flipped');
-    // }
+//         }
+//     }
+//     else {
+//         reset();
+//     }
 // }
+
