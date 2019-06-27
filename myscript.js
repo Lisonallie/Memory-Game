@@ -17,20 +17,22 @@ for (let i = 0; i < innerCard.length; i++) {
             secondCardClicked = innerCard[i];
             compare();
         }
-        function compare() {
-            if (firstCardClicked === secondCardClicked) {
-                innerCard[i].removeEventListener("click", flip);
-                if (secondCardClicked === firstFlip) {
-                    
-                }
-            }
-            else {
-                reset();
-            }
-            function reset() {
-                innerCard[i].classList.remove('is-flipped');
-            }
-        }
     });
     cardArray.push(innerCard[i]);
+}
+
+function compare() {
+    if (firstCardClicked === secondCardClicked) {
+        firstCardClicked.removeEventListener("click", flip);
+        if (secondCardClicked === firstFlip) {
+
+        }
+    }
+    else {
+        reset();
+    }
+    function reset() {
+        firstCardClicked.classList.remove('is-flipped');
+        secondCardClicked.classList.remove('is-flipped');
+    }
 }
