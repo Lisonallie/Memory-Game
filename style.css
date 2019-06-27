@@ -25,7 +25,7 @@
   padding: 5px;
 }
 
-.flip-card-inner {
+.inner-card {
   position: relative;
   width: 100%;
   height: 100%;
@@ -35,7 +35,7 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 20px;
 }
-.flip-card-inner:hover {
+.inner-card:hover {
   cursor: pointer;
 }
 
@@ -60,4 +60,8 @@
   color: white;
   transform: rotateY(180deg);
   border-radius: 20px;
+}
+
+.inner-card.is-flipped {
+  transform: rotateY(-180deg);
 }
