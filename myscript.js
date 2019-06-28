@@ -6,6 +6,8 @@ let firstCard, secondCard;
 
 
 function flipCard() {
+    if(lockBoard) return;
+    if(this === firstCard) return;
     this.classList.add('is-flipped');
     if (!hasFlippedCard) {
         // first click
@@ -33,10 +35,21 @@ function disableCards() {
 }
 
 function unflipCards() {
+    lockBoard = true;
+
     setTimeout(() => {
         //so the cards don't turn back around too fast
         firstCard.classList.remove('is-flipped');
         secondCard.classList.remove('is-flipped');
+
+        lockBoard = false;
     }, 1300);
 }
+
+function reset() {
+    //ES6 way of giving 2 variables new values
+    [hasFlippedCard, lockBoard] = [false, false];
+    [firstCard, secondCard] = [null, null];
+}
+
 cards.forEach(card => card.addEventListener('click', flipCard));
