@@ -6,8 +6,8 @@ let firstCard, secondCard;
 
 
 function flipCard() {
-    if(lockBoard) return;
-    if(this === firstCard) return;
+    if (lockBoard) return;
+    if (this === firstCard) return;
     this.classList.add('is-flipped');
     if (!hasFlippedCard) {
         // first click
@@ -15,10 +15,10 @@ function flipCard() {
         firstCard = this;
         return; //stop execution of function
     }
-        // second click
-        secondCard = this;
-        checkForMatch();
-        //do the cards match??
+    // second click
+    secondCard = this;
+    checkForMatch();
+    //do the cards match??
 }
 
 function checkForMatch() {
@@ -56,8 +56,8 @@ function reset() {
 //putting the whole function in parentheses transforms it into an immediately invoked function
 (function shuffle() {
     cards.forEach(card => {
-        let random = Math.floor(Math.random() * 12);
-        card.style.order = random;
+        let randomPos = Math.floor(Math.random() * 12);
+        card.style.order = randomPos;
     });
 })(); //execute
 
