@@ -16,6 +16,9 @@ function flipCard() {
         //second click
         hasFlippedCard = false;
         secondCard = this;
+        //do cards match?? console.log(firstCard.dataset.framework);
+        //console.log(secondCard.dataset.framework);
+        
     }
   }
   
