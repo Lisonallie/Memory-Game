@@ -10,6 +10,12 @@ function flipCard() {
     if(hasFlippedCard) {
         //first click
         hasFlippedCard = true;
+        firstCard = this;
+    }
+    else {
+        //second click
+        hasFlippedCard = false;
+        secondCard = this;
     }
   }
   
