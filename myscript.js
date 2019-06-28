@@ -27,10 +27,7 @@ function checkForMatch() {
     }
     else {
         //not a match
-        setTimeout(() => {
-            firstCard.classList.remove('is-flipped');
-            secondCard.classList.remove('is-flipped');
-        }, 1500);
+        unflipCards();
     }
 }
 
@@ -39,4 +36,10 @@ function disableCards() {
     secondCard.removeEventListener("click", flipCard);
 }
 
+function unflipCards() {
+    setTimeout(() => {
+        firstCard.classList.remove('is-flipped');
+        secondCard.classList.remove('is-flipped');
+    }, 1300);
+}
 cards.forEach(card => card.addEventListener('click', flipCard));
