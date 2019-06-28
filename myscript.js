@@ -15,71 +15,28 @@ function flipCard() {
         // second click
         hasFlippedCard = false;
         secondCard = this;
+        checkForMatch();
         //do the cards match??
-        if(firstCard.dataset.framework === secondCard.dataset.framework) {
-            //it's a match!!
-            firstCard.removeEventListener("click", flipCard);
-            secondCard.removeEventListener("click", flipCard);
-        }
     }
 }
 
+function checkForMatch() {
+    if (firstCard.dataset.framework === secondCard.dataset.framework) {
+        //it's a match!!
+        disableCards();
+    }
+    else {
+        //not a match
+        setTimeout(() => {
+            firstCard.classList.remove('is-flipped');
+            secondCard.classList.remove('is-flipped');
+        }, 1500);
+    }
+}
+
+function disableCards() {
+    firstCard.removeEventListener("click", flipCard);
+    secondCard.removeEventListener("click", flipCard);
+}
+
 cards.forEach(card => card.addEventListener('click', flipCard));
-
-
-
-
-
-
-
-
-
-// let cardArray = [];
-// let cardImg = document.querySelectorAll(".flip-card-back > img");
-
-// for (let i = 0; i < innerCard.length; i++) {
-//     innerCard[i].addEventListener("click", function flip() {
-//         innerCard[i].classList.toggle('is-flipped');
-//     });
-//     cardArray.push(innerCard[i]);
-// }
-
-
-
-// My code that never worked out
-// let firstCardClicked;
-// let secondCardClicked;
-// let firstFlip = true;
-    // function reset() {
-    //     firstCardClicked.classList.remove('is-flipped');
-    //     secondCardClicked.classList.remove('is-flipped');
-    //     firstCardClicked.addEventListener("click", flip);
-    //     secondCardClicked.addEventListener("click", flip);
-    //     firstCardClicked = null;
-    //     secondCardClicked = null;
-    // }
-    //     if (firstFlip) {
-    //         firstCardClicked = innerCard[i];
-    //         firstCardClicked.removeEventListener("click", flip);
-    //         firstFlip = false;
-    //     }
-    //     else {
-    //         secondCardClicked = innerCard[i];
-    //         secondCardClicked.removeEventListener("click", flip);
-    //         reset();
-    //     }
-    // });
-    // let flip = flip();
-
-// function compare() {
-//     if (firstCardClicked === secondCardClicked) {
-//         firstCardClicked.removeEventListener("click", flip);
-//         if (secondCardClicked === firstFlip) {
-
-//         }
-//     }
-//     else {
-//         reset();
-//     }
-// }
-
