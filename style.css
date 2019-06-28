@@ -28,8 +28,8 @@
   transform-style: preserve-3d;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 20px;
-  width: 180px;
-  height: 230px;
+  width: 195px;
+  height: 245px;
   margin: 5px;
 }
 .inner-card:hover {
