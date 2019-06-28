@@ -7,24 +7,24 @@ let firstCard, secondCard;
 
 function flipCard() {
     this.classList.add('is-flipped');
-    if(hasFlippedCard) {
-        //first click
+    if (!hasFlippedCard) {
+        // first click
         hasFlippedCard = true;
         firstCard = this;
-    }
-    else {
-        //second click
+    } else {
+        // second click
         hasFlippedCard = false;
         secondCard = this;
-        //do cards match?? console.log(firstCard.dataset.framework);
-        //console.log(secondCard.dataset.framework);
-        console.log(firstCard.dataset.framework);
-        console.log(secondCard.dataset.framework);
-
+        //do the cards match??
+        if(firstCard.dataset.framework === secondCard.dataset.framework) {
+            //it's a match!!
+            firstCard.removeEventListener("click", flipCard);
+            secondCard.removeEventListener("click", flipCard);
+        }
     }
-  }
-  
-  cards.forEach(card => card.addEventListener('click', flipCard));
+}
+
+cards.forEach(card => card.addEventListener('click', flipCard));
 
 
 
