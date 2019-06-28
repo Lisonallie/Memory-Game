@@ -53,5 +53,12 @@ function reset() {
 }
 
 
+//putting the whole function in parentheses transforms it into an immediately invoked function
+(function shuffle() {
+    cards.forEach(card => {
+        let random = Math.floor(Math.random() * 12);
+        card.style.order = random;
+    });
+})(); //execute
 
 cards.forEach(card => card.addEventListener('click', flipCard));
