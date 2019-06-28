@@ -2,7 +2,7 @@
 const cards = document.querySelectorAll(".inner-card");
 let hasFlippedCard = false;
 
-let firstCard = secondCard;
+let firstCard, secondCard;
 
 
 function flipCard() {
@@ -18,7 +18,9 @@ function flipCard() {
         secondCard = this;
         //do cards match?? console.log(firstCard.dataset.framework);
         //console.log(secondCard.dataset.framework);
-        
+        console.log(firstCard.dataset.framework);
+        console.log(secondCard.dataset.framework);
+
     }
   }
   
